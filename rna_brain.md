@@ -49,20 +49,20 @@
 # extract pTPM dataframe and filter so row mean > 3
 
  for i in range(0, t.shape[0]):
->   r = t.iloc[i, 2]
->   v = t.iloc[i, 4]
->   id = t.iloc[i, 0]
->   df2.loc[id, r] = v
-> 
-> 
-> df2.to_csv("pTPM_dataframe.tsv", sep="\t")
-> 
-> df2['mean'] = df2.mean(axis=1)
-> print(df2)
-> 
-> df3 = df2[df2['mean'] > 3]
-> print(df3)
-> 
-> df3.to_csv("nTPM_after_thres.tsv", sep='\t')
-> 
+   r = t.iloc[i, 2]
+   v = t.iloc[i, 4]
+   id = t.iloc[i, 0]
+   df2.loc[id, r] = v
+ 
+ 
+ df2.to_csv("pTPM_dataframe.tsv", sep="\t")
+ 
+ df2['mean'] = df2.mean(axis=1)
+ print(df2)
+ 
+ df3 = df2[df2['mean'] > 3]
+ print(df3)
+ 
+ df3.to_csv("nTPM_after_thres.tsv", sep='\t')
+ 
 ```
